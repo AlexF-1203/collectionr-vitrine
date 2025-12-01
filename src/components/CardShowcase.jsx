@@ -8,31 +8,38 @@ const CardShowcase = () => {
     const [hoveredId, setHoveredId] = useState(null);
 
     const pokemonCards = [
-        {
-            id: 1,
-            name: "Charizard VMAX",
-            image: "https://images.pokemontcg.io/sv8pt5/161_hires.png",
-            rarity: "Secret Rare"
-        },
-        {
-            id: 2,
-            name: "Blastoise EX",
-            image: "https://images.pokemontcg.io/swsh45sv/SV122_hires.png",
-            rarity: "Full Art"
-        },
-        {
-            id: 3,
-            name: "Charizard Base Set",
-            image: "https://images.pokemontcg.io/swsh12pt5/160_hires.png",
-            rarity: "Classic"
-        },
-        {
-            id: 4,
-            name: "Pikachu VMAX",
-            image: "https://images.pokemontcg.io/swsh45sv/SV107_hires.png",
-            rarity: "Rainbow"
-        }
-    ];
+    {
+        id: 1,
+        name: "Umbreon ex",
+        // Série : Obsidian Flames (Flammes Obsidiennes) - Carte 215/197
+        image: "https://images.pokemontcg.io/sv8pt5/161_hires.png",
+        rarity: "Special Illustration Rare"
+    },
+    {
+        id: 2,
+        name: "Eternatus VMAX",
+        // Série : Shining Fates (Destinées Radieuses) - Carte SV122/SV122
+        // Version Noir et Or (Black & Gold)
+        image: "https://images.pokemontcg.io/swsh45sv/SV122_hires.png",
+        rarity: "Rare Holo VMAX"
+    },
+    {
+        id: 3,
+        name: "Pikachu",
+        // Série : Crown Zenith (Zénith Suprême) - Carte 160/159
+        // C'est la carte secrète du set principal
+        image: "https://images.pokemontcg.io/swsh12pt5/160_hires.png",
+        rarity: "Secret Rare"
+    },
+    {
+        id: 4,
+        name: "Charizard VMAX",
+        // Série : Shining Fates (Destinées Radieuses) - Carte SV107/SV122
+        // Version Shiny (Brillante)
+        image: "https://images.pokemontcg.io/swsh45sv/SV107_hires.png",
+        rarity: "Rare Shiny VMAX"
+    }
+]
 
     // Yu-Gi-Oh! Cards
     const yugiohCards = [

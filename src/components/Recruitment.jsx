@@ -56,8 +56,8 @@ const Recruitment = () => {
                         Nous cherchons des talents pour nous aider à construire cette vision.
                     </p>
                     <ul className="recruitment-list">
-                        <li>🚀 Participez à un projet innovant (S7 à S10)</li>
-                        <li>🧠 Travaillez sur des modèles IA avancés (YOLO, CNN)</li>
+                        <li>🚀 Participez à un projet innovant</li>
+                        <li>🧠 Travaillez sur des modèles IA avancés</li>
                         <li>🃏 Créez l'outil ultime pour les collectionneurs</li>
                     </ul>
                     <a
