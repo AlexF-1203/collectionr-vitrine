@@ -1,0 +1,223 @@
+:root {
+    --card-width: 280px;
+    --card-height: 390px;
+    --transition-speed: 0.4s;
+}
+
+.card-showcase {
+    background: linear-gradient(to bottom, rgba(139, 92, 246, 0.02) 0%, #0a0a12 30%, #0a0a12 100%);
+    /* Gradient fluide depuis Hero vers fond sombre */
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 4rem;
+}
+
+/* --- TABS DE NAVIGATION --- */
+.collection-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.tab-button:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* --- LE CONTENEUR (La Galerie) --- */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /* Espace entre les cartes */
+    padding: 20px;
+    /* Perspective pour donner un effet 3D subtil */
+    perspective: 1200px;
+}
+
+/* --- LA CARTE (Wrapper) --- */
+.gallery-card {
+    position: relative;
+    width: var(--card-width);
+    height: var(--card-height);
+    cursor: pointer;
+    /* Transition fluide pour tout changement */
+    transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+    /* Départ : légèrement incliné en arrière pour le style "Vitrine" */
+    transform: rotateX(5deg) scale(0.95);
+}
+
+/* --- L'INTERIEUR (L'image + Effets) --- */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: inherit;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- COMPORTEMENT DE GROUPE (FOCUS) --- */
+
+/* 1. Quand on survole UNE carte, les autres reculent et floutent */
+.gallery-container.has-focus .gallery-card:not(.active) {
+    transform: scale(0.9) rotateX(5deg);
+    /* Elles rapetissent un peu */
+    filter: blur(3px) brightness(0.5) grayscale(0.4);
+    /* Elles s'effacent visuellement */
+    opacity: 0.7;
+}
+
+/* 2. LA CARTE ACTIVE (Celle survolée) */
+.gallery-card.active {
+    z-index: 10;
+    /* Elle passe devant tout le monde */
+    /* Elle grossit, se redresse (0deg) et monte un peu */
+    transform: scale(1.15) rotateX(0deg) translateY(-20px);
+}
+
+.gallery-card.active .card-inner {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    /* Glow externe */
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- EFFETS HOLOGRAPHIQUES (LA TOUCHE FINALE) --- */
+
+/* Le reflet brillant qui passe en diagonale */
+.holo-sheen {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.6),
+            transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    transition: none;
+    /* Pas d'anim au retour */
+}
+
+/* L'animation du reflet */
+.gallery-card.active .holo-sheen {
+    left: 150%;
+    transition: left 0.8s ease-in-out;
+}
+
+/* Un dégradé arc-en-ciel subtil permanent au survol */
+.holo-glare {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg,
+            rgba(255, 0, 0, 0) 30%,
+            rgba(255, 255, 255, 0.2) 40%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.2) 60%,
+            rgba(0, 0, 255, 0) 70%);
+    opacity: 0;
+    mix-blend-mode: color-dodge;
+    /* Donne cet aspect métallique brillant */
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.gallery-card.active .holo-glare {
+    opacity: 1;
+}
+
+/* Info badge en bas */
+.card-info {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.gallery-card.active .card-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-info span {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .gallery-container {
+        flex-wrap: wrap;
+        /* On passe sur plusieurs lignes si besoin */
+        gap: 30px;
+    }
+
+    :root {
+        --card-width: 200px;
+        --card-height: 280px;
+    }
+}
