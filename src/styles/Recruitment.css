@@ -153,14 +153,128 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .card-stack {
+        width: 320px;
+        height: 350px;
+    }
+
+    .card {
+        width: 200px;
+        height: 280px;
+    }
+
+    .card-1 {
+        left: 5px;
+        top: 40px;
+    }
+
+    .card-2 {
+        left: 60px;
+        top: 25px;
+    }
+
+    .card-3 {
+        right: 5px;
+        top: 40px;
+    }
+}
+
 @media (max-width: 768px) {
     .recruitment-content {
         flex-direction: column;
         text-align: center;
+        gap: var(--spacing-xl);
+    }
+
+    .recruitment-text {
+        order: 1;
+    }
+
+    .recruitment-visual {
+        order: 2;
     }
 
     .recruitment-list {
         text-align: left;
         display: inline-block;
+    }
+
+    .recruitment-desc {
+        font-size: 1rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .btn-large {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+
+    .card-stack {
+        width: 280px;
+        height: 320px;
+    }
+
+    .card {
+        width: 160px;
+        height: 224px;
+    }
+
+    .card-1 {
+        left: 0;
+        top: 40px;
+        transform: rotateZ(-15deg);
+    }
+
+    .card-2 {
+        left: 60px;
+        top: 25px;
+    }
+
+    .card-3 {
+        right: 0;
+        top: 40px;
+        transform: rotateZ(15deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .recruitment-desc {
+        font-size: 0.9rem;
+    }
+
+    .recruitment-list li {
+        font-size: 0.9rem;
+    }
+
+    .btn-large {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .card-stack {
+        width: 240px;
+        height: 280px;
+        transform: scale(0.9);
+    }
+
+    .card {
+        width: 140px;
+        height: 196px;
+    }
+
+    .card-1 {
+        left: 0;
+        top: 35px;
+    }
+
+    .card-2 {
+        left: 50px;
+        top: 20px;
+    }
+
+    .card-3 {
+        right: 0;
+        top: 35px;
     }
 }

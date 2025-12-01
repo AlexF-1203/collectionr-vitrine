@@ -10,9 +10,7 @@ const Footer = () => {
                     <p>&copy; {new Date().getFullYear()} CollectionR. Tous droits réservés.</p>
                 </div>
                 <div className="footer-links">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a href="https://github.com/EpitechMscProPromo2027/T-ESP-700-project-93703-NCE_17" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
         </footer>

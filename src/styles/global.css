@@ -50,6 +50,56 @@ h3 {
     padding: var(--spacing-lg) 0;
 }
 
+.padding-section {
+    padding: var(--spacing-lg) 0;
+}
+
+/* --- RESPONSIVE GLOBAL --- */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 960px;
+        padding: 0 var(--spacing-md);
+    }
+
+    .section,
+    .padding-section {
+        padding: var(--spacing-md) 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .section,
+    .padding-section {
+        padding: var(--spacing-sm) 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+
+    body {
+        font-size: 0.95rem;
+    }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;

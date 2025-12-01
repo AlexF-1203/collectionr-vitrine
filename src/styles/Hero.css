@@ -112,7 +112,7 @@
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 1000px;
     position: relative;
     z-index: 2;
 }
@@ -178,17 +178,88 @@
     border-color: var(--color-text-muted);
 }
 
+@media (max-width: 1024px) {
+    .carousel-3d-container {
+        width: 900px;
+        height: 900px;
+    }
+
+    .carousel-3d-item {
+        width: 160px;
+        height: 230px;
+        margin-left: -80px;
+        margin-top: -115px;
+        transform: rotateY(calc(360deg / var(--total-cards) * var(--card-index))) translateZ(350px);
+    }
+
+    .hero-content {
+        max-width: 90%;
+        padding: 0 var(--spacing-md);
+    }
+}
+
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 60px;
+        min-height: 100vh;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
     }
-    
-    .falling-card {
-        width: 60px;
-        height: 90px;
+
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        padding: 0 var(--spacing-sm);
     }
-    
-    .card-placeholder {
-        font-size: 0.6rem;
+
+    .carousel-3d-container {
+        width: 600px;
+        height: 600px;
+    }
+
+    .carousel-3d-item {
+        width: 120px;
+        height: 170px;
+        margin-left: -60px;
+        margin-top: -85px;
+        transform: rotateY(calc(360deg / var(--total-cards) * var(--card-index))) translateZ(250px);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 80%;
+        max-width: 280px;
+        text-align: center;
+        padding: 0.9rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-3d-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .carousel-3d-item {
+        width: 90px;
+        height: 130px;
+        margin-left: -45px;
+        margin-top: -65px;
+        transform: rotateY(calc(360deg / var(--total-cards) * var(--card-index))) translateZ(150px);
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
     }
 }

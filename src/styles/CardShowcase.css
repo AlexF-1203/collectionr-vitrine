@@ -210,14 +210,105 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
+    .card-showcase {
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+    }
+
     .gallery-container {
         flex-wrap: wrap;
-        /* On passe sur plusieurs lignes si besoin */
         gap: 30px;
+        padding: 10px;
     }
 
     :root {
         --card-width: 200px;
         --card-height: 280px;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .collection-tabs {
+        gap: 10px;
+        flex-wrap: wrap;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-showcase {
+        padding: var(--spacing-md) 0;
+    }
+
+    :root {
+        --card-width: 160px;
+        --card-height: 224px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .collection-tabs {
+        gap: 8px;
+    }
+
+    .tab-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .gallery-container {
+        gap: 20px;
+    }
+
+    .gallery-card.active {
+        transform: scale(1.08) rotateX(0deg) translateY(-10px);
+    }
+
+    .card-info {
+        bottom: -30px;
+    }
+
+    .card-info span {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --card-width: 140px;
+        --card-height: 196px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .tab-button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .gallery-container {
+        gap: 15px;
+    }
+
+    .card-inner {
+        border-radius: 12px;
     }
 }

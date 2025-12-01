@@ -61,7 +61,7 @@ const Recruitment = () => {
                         <li>🃏 Créez l'outil ultime pour les collectionneurs</li>
                     </ul>
                     <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfPlaceholder/viewform"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScSPJpip2sBlWRckiRPvsTECfQa85a28Xu6RwiTH4rOwwyQKw/viewform?usp=header"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary btn-large"

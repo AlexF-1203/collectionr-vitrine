@@ -64,8 +64,6 @@ const Hero = () => {
                 </h1>
                 <p className="hero-subtitle">
                     Gérez, évaluez et suivez la valeur de vos cartes avec la puissance de l'IA.
-                    <br />
-                    <span className="hero-meta">Projet S7 → S10 • Équipe de 7 passionnés</span>
                 </p>
                 <div className="hero-actions">
                     <a href="#recruitment" className="btn-primary">Rejoindre l'équipe</a>
