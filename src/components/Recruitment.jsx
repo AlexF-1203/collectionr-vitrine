@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Recruitment.css';
+import YouTubeShort from './YouTubeShort';
 
 const Recruitment = () => {
     const [displayCards, setDisplayCards] = useState([]);
@@ -59,6 +60,7 @@ const Recruitment = () => {
                         <li>🚀 Participez à un projet innovant</li>
                         <li>🧠 Travaillez sur des modèles IA avancés</li>
                         <li>🃏 Créez l'outil ultime pour les collectionneurs</li>
+                        
                     </ul>
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLScSPJpip2sBlWRckiRPvsTECfQa85a28Xu6RwiTH4rOwwyQKw/viewform?usp=header"
@@ -69,7 +71,7 @@ const Recruitment = () => {
                         Postuler maintenant
                     </a>
                 </div>
-                <div className="recruitment-visual">
+                {/* <div className="recruitment-visual">
                     <div className="card-stack">
                         {cards.map((card, index) => (
                             <div key={card.id} className={`card card-${index + 1}`} style={{ '--card-color': card.color }}>
@@ -79,7 +81,8 @@ const Recruitment = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
+                <YouTubeShort />
             </div>
         </section>
     );

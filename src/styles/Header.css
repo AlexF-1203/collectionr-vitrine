@@ -27,7 +27,11 @@
 
 .logo img {
     height: 40px;
-    width: auto;
+    width: 40px;
+    object-fit: contain;
+    object-position: center;
+    background-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .nav {
@@ -77,6 +81,8 @@
 
     .logo img {
         height: 32px;
+        width: 32px;
+        object-fit: contain;
     }
 
     .nav {
