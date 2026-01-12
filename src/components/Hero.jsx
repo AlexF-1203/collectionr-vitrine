@@ -59,7 +59,7 @@ const Hero = () => {
 
             <div className="container hero-content">
                 <h1 className="hero-title">
-                    La Boîte à Outils Intelligente <br />
+                    La Solution Intelligente <br />
                     <span className="text-gradient">pour le Collectionneur de TCG</span>
                 </h1>
                 <p className="hero-subtitle">
